@@ -44,14 +44,6 @@ main {
     padding-right: 40px;
 }
 
-#screen {
-    border: 0.5em solid;
-    border-color: #5C2A21;
-    height: 30em;
-    width: 30em;
-    background: white;
-}
-
 .button {
     cursor: pointer;
     font-family: 'Staatliches', cursive;
@@ -93,12 +85,18 @@ main {
   
   #screen {
     display: grid;
-    grid-gap: 1em;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+    border: 0.5em solid;
+    border-color: #5C2A21;
+    background: white;
   }
   
   .grid-item {
+    width:100% !important 
     padding: 1em;
     border: 1px solid #ddd;
     text-align: center;

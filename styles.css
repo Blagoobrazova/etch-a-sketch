@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    margin-bottom: -110px !important;
+    margin-bottom: -115px !important;
 }
 
 #header-items {
@@ -28,8 +28,8 @@ header {
     padding: 5px 15px;
     width: 930px;
     border: 1em solid;
+    border-top-left-radius: 12px;
     background: #906964;
-    border-radius: 3px;
     border-color: #5C2A21;
 }
 
@@ -59,6 +59,7 @@ header {
     justify-content: center;
     background: #FEC842;
     border: 1em solid;
+    border-bottom-left-radius: 12px;
     border-color: #5C2A21;
 }
 

@@ -5,22 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-<!--Settings-->
-<div id="settings">
-    <div class="sides">
-        <button id="penColor" class="button">Pen Color</button>
-        <button id="backgroundColor" class="button">Background Colour</button>
-        <button id="erase" class="button">Erase</button>       
-     </div>
-     <div class="sides">
-        <div class="text">Clear All</div>
-        <button id="clear"></button>
+<main>
+    <div id="sketchpad">
+        <div class="leftside">
+            <div class="text" id="title">Etch-a-Sketch</div>
+            <button id="penColor" class="button">Pen Color</button>
+            <button id="backgroundColor" class="button">Background Colour</button>
+            <button id="erase" class="button">Eraser</button>       
+        </div>
+        <div class="screenContainer">
+            <div id="screen"></div>
+        </div>
+        <div class="rightside">
+            <div class="text" id="cleartxt">Clear</div>
+            <button id="clear"></button>
+        </div>
     </div>
-</div>
-    <div id="squaresBox"></div>
+</main>
+
 </body>
 <script src="./script.js"></script>
 </html>

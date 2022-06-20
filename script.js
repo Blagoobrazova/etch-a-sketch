@@ -7,7 +7,6 @@ function makeRows(rows, cols) {
   screen.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     const square = document.createElement("div");
-    square.innerText = (c + 1);
     screen.appendChild(square).className = "grid-item";
   };
 };

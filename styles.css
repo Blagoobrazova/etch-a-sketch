@@ -1,0 +1,60 @@
+/*desing*/
+body {
+    background: #C1BEAD;
+    color: #5C2A21;
+}
+
+#settings {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 100px;
+}
+  
+.sides {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+    gap: 10px;
+}
+
+.button {
+    background: #E09A45;
+    color: #5C2A21;
+    border: 2px solid;
+    border-radius: 12px;
+    border-color: #5C2A21;
+    text-decoration: none;
+    text-align: center;
+}
+
+#clear {
+    background: #EF5B2D;
+    border: 3px solid;
+    border-radius: 100%;
+    border-color: #5C2A21;
+    width: 30px;
+    height: 30px;
+}
+
+/*game*/
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+  }
+  
+  #squaresBox {
+    width: 4em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+  }
+  
+  .grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
+  }

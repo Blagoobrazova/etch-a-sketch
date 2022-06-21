@@ -29,6 +29,7 @@ let penColor = document.getElementById("pColor");
 
 backColor.addEventListener("input", () => {
   screen.style.backgroundColor = backColor.value;
+  backColor.style.backgroundColor = backColor.value;
 });
 
 //music

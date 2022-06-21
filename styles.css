@@ -179,5 +179,5 @@ header {
   
   .grid-item {
     width:100% !important;
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
   } 

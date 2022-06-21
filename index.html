@@ -20,8 +20,12 @@
 <main>
     <div id="sketchpad">
         <div class="leftside">
-            <button id="pencil" class="button">Pen Color</button>
-            <button id="background" class="button">Background</button>
+            <button id="pencil" class="button">Pen Color
+                <div id="pColor"></div>
+            </button>
+            <button id="background" class="button">Background
+                <div id="bColor"></div>
+            </button>
             <button id="rainbow" class="button">Rainbow mode</button>
             <button id="eraser" class="button">Eraser</button> 
             <div class="musicOn">
@@ -29,7 +33,7 @@
             </div>
             <button id="music" class="button">Music: off</button>  
             <div id="sizeadj">
-                <span id="rangeValue">0</span>
+                <span id="rangeValue">16x16</span>
                 <Input class="range" type="range" value="0" min="0" max="64" onChange="rangeSlide(this.value)" 
                  onmousemove="rangeSlide(this.value)">
                 </Input>  

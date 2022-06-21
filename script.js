@@ -12,3 +12,18 @@ function makeRows(rows, cols) {
 };
 
 makeRows(16, 16);
+
+//music
+
+let on_off = document.getElementById("music");
+let audio = document.querySelector('.musicOn audio');
+
+on_off.onclick = function() {
+  if (audio.paused) {
+    audio.play()
+    on_off.innerHTML = "music: on"
+  } else {
+    audio.pause();
+    on_off.innerHTML = "music: off"
+  }
+}

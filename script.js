@@ -1,6 +1,6 @@
 //make 16x16 grid of square divs
 
-const screen = document.getElementById("screen");
+let screen = document.getElementById("screen");
 
 function makeRows(rows, cols) {
   screen.style.setProperty('--grid-rows', rows);
@@ -12,6 +12,24 @@ function makeRows(rows, cols) {
 };
 
 makeRows(16, 16);
+
+//size adjustment
+let size = document.getElementById("sizeValue");
+
+function updateSizeValue(value) {
+  size.innerHTML = `${value} x ${value}`
+}
+function rangeSlide(value) {
+  size.innerHTML = value;
+}
+
+//color picking 
+let backColor = document.getElementById("bColor");
+let penColor = document.getElementById("pColor");
+
+backColor.addEventListener("input", () => {
+  screen.style.backgroundColor = backColor.value;
+});
 
 //music
 

@@ -21,21 +21,21 @@
     <div id="sketchpad">
         <div class="leftside">
             <button id="pencil" class="button">Pen Color
-                <input type="color" id="pColor"></input>
+                <input type="color" id="pColor" style="cursor: pointer"></input>
             </button>
             <button id="background" class="button">Background
-                <input type="color" value="#ffffff" id="bColor"></input>
+                <input type="color" value="#ffffff" id="bColor" style="cursor: pointer"></input>
             </button>
             <button id="rainbow" class="button">Rainbow mode</button>
-            <button id="eraser" class="button">Eraser</button> 
+            <button id="eraser" class="button" style="cursor: pointer">Eraser</button> 
             <div class="musicOn">
                 <audio id="audio" style="display:none;" src="./music/kv-morning.mp3" controls loop>
             </div>
-            <button id="music" class="button">Music: off</button>  
+            <button id="music" class="button" style="cursor: pointer">Music: off</button>  
             <div id="sizeadj">
                 <span id="sizeValue">16 x 16</span>
-                <Input class="range" type="range" value="16" min="1x1" max="64x64" onChange="rangeSlide(this.value)" 
-                 onmousemove="rangeSlide(this.value)">
+                <Input class="range" type="range" value="16" min="1" max="64" onChange="updateCanvas(value)" 
+                 onmousemove="updateCanvas(this.value); changeCanvas(this.value)">
                 </Input>  
             </div>  
         </div>

@@ -1,26 +1,31 @@
 //make 16x16 grid of square divs
 
-let screen = document.getElementById("screen");
+let canvas = document.getElementById("screen");
 
-function makeRows(rows, cols) {
-  screen.style.setProperty('--grid-rows', rows);
-  screen.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
+function makeCanvas(size) {
+  canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+  canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`
+
+  for (i = 0; i < size * size; i++) {
     const square = document.createElement("div");
-    screen.appendChild(square).className = "grid-item";
+    canvas.appendChild(square).className = "gridItem";
+    //square.addEventListener('click', draw());
   };
 };
 
-makeRows(16, 16);
+makeCanvas(16);
 
 //size adjustment
-let size = document.getElementById("sizeValue");
+let sizeValue = document.getElementById("sizeValue");
 
-function updateSizeValue(value) {
-  size.innerHTML = `${value} x ${value}`
-}
-function rangeSlide(value) {
-  size.innerHTML = value;
+function updateCanvas(value) {
+  sizeValue.innerHTML = `${value} x ${value}`
+} 
+
+function changeCanvas(value) {
+    let gridPixels = canvas.querySelectorAll("div");
+    gridPixels.forEach(gridPixel => gridPixel.remove());
+    makeCanvas(value);
 }
 
 //color picking 
@@ -28,12 +33,28 @@ let backColor = document.getElementById("bColor");
 let penColor = document.getElementById("pColor");
 
 backColor.addEventListener("input", () => {
-  screen.style.backgroundColor = backColor.value;
+  canvas.style.backgroundColor = backColor.value;
   backColor.style.backgroundColor = backColor.value;
 });
 
-//music
+penColor.addEventListener("input", () => {
+  penColor.style.backgroundColor = penColor.value;
+});
 
+//clearing
+let clear = document.getElementById("cleartxt");
+clear.addEventListener("click", function cleareAll() {
+  let allPixels = canvas.querySelectorAll("div");
+  allPixels.forEach(onePixel => allPixels.style.backgroundColor = "#ffffff");
+});
+
+/*function draw(e) {
+  e.target.backgroundColor = penColor.value;
+}
+
+clear.onclick = () => reloadGrid()*/
+
+//music
 let on_off = document.getElementById("music");
 let audio = document.querySelector('.musicOn audio');
 

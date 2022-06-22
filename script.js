@@ -1,5 +1,4 @@
 //make 16x16 grid of square divs
-
 let canvas = document.getElementById("screen");
 
 function makeCanvas(size) {
@@ -16,6 +15,7 @@ function makeCanvas(size) {
 makeCanvas(16);
 
 //size adjustment
+let gridPixels = canvas.querySelectorAll("div");
 let sizeValue = document.getElementById("sizeValue");
 
 function updateCanvas(value) {
@@ -27,6 +27,22 @@ function changeCanvas(value) {
     gridPixels.forEach(gridPixel => gridPixel.remove());
     makeCanvas(value);
 }
+
+//deleting borders
+let hidebrd = document.getElementById("hideBorders");
+
+hidebrd.addEventListener("click", function handleClick() {
+  let gridPixels = canvas.querySelectorAll("div");
+  if(hidebrd.className == "on"){
+  gridPixels.forEach(gridPixel => gridPixel.style.border = "0");
+  hidebrd.className = "off";
+  hidebrd.innerHTML = "show borders";
+  } else if(hidebrd.className == "off"){
+  gridPixels.forEach(gridPixel => gridPixel.style.border = "0.5px solid #ddd");
+  hidebrd.className = "on";
+  hidebrd.innerHTML = "hide borders";
+  }
+}); 
 
 //color picking 
 let backColor = document.getElementById("bColor");

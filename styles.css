@@ -144,7 +144,9 @@ header {
 }
 
 /* all buttons */
-.button {
+.button,
+.on,
+.off {
     font-family: 'Staatliches', cursive;
     background: #E09A45;
     color: #5C2A21;

@@ -28,7 +28,7 @@ Created as a part of [The Odin Project](https://www.theodinproject.com) curricul
 
 ### Links
 
-- Live Site URL: [live site URL](https://blagoobrazova.github.io/etch-a-sketch/)
+- [live site URL](https://blagoobrazova.github.io/etch-a-sketch/)
 
 ## My process
 
@@ -49,9 +49,9 @@ Since this is the first time I've used CSS grid, I need to practice more on that
 
 ### Useful resources
 
-- [resource 1](https://www.youtube.com/watch?v=rg7Fvvl3taU) - This helped me to understand what CSS grid capable of and how I could benefit from it. I highly recommend it to anyone struggling with grid.
-- [resource 2](https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input/color) - An article on color inputs.
-- [resource 3](https://developer.mozilla.org/ru/docs/Web/API/Event/target) - An article on event.target, which helped me when I tried to make a function for drawing.
+- [Kevin Powell - "Learn CSS grid the easy way"](https://www.youtube.com/watch?v=rg7Fvvl3taU) - This helped me to understand what CSS grid capable of and how I could benefit from it. I highly recommend it to anyone struggling with grid.
+- [MDN: input type="color"](https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input/color) - Thanks to this I've added the color pickers.
+- [MDN: event.target](https://developer.mozilla.org/ru/docs/Web/API/Event/target) - Helped me when I tried to make a function for drawing.
 
 
 ## Author

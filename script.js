@@ -37,7 +37,7 @@ hidebrd.addEventListener("click", function handleClick() {
   gridPixels.forEach(gridPixel => gridPixel.style.border = "0");
   hidebrd.className = "off";
   hidebrd.innerHTML = "show borders";
-  } else if(hidebrd.className == "off"){
+  } else {
   gridPixels.forEach(gridPixel => gridPixel.style.border = "0.5px solid #ddd");
   hidebrd.className = "on";
   hidebrd.innerHTML = "hide borders";
@@ -70,9 +70,31 @@ penColor.addEventListener("input", () => {
   penColor.style.backgroundColor = penColor.value; //make button same color as the pencil's current color
 });
 
+//rainbow mode
+let rainbow = document.getElementById("rainbow");
+
+function generateColor() {
+  let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+  return randomColor;
+}
+
+rainbow.addEventListener("click", function handleClick() {
+  if (rainbow.className == "off") {
+    rainbow.className = "on";
+    rainbow.innerHTML = "Rainbow mode: on"
+  } else {
+    rainbow.className = "off";
+    rainbow.innerHTML = "Rainbow mode: off"
+  }
+});
+
 //drawing
 function draw(e) {
+  if (rainbow.className == "off"){
   e.target.style.backgroundColor = penColor.value;
+  } else if (rainbow.className == "on"){
+    e.target.style.backgroundColor = generateColor();
+  }
 }
 
 

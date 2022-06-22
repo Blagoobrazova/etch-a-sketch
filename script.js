@@ -17,16 +17,17 @@ makeCanvas(16);
 //size adjustment
 let gridPixels = canvas.querySelectorAll("div");
 let sizeValue = document.getElementById("sizeValue");
+let range = document.getElementById("range");
 
 function updateCanvas(value) {
   sizeValue.innerHTML = `${value} x ${value}`
-} 
+}
 
 function changeCanvas(value) {
     let gridPixels = canvas.querySelectorAll("div");
     gridPixels.forEach(gridPixel => gridPixel.remove());
     makeCanvas(value);
-}
+};
 
 //hiding borders
 let hidebrd = document.getElementById("hideBorders");
@@ -70,8 +71,10 @@ penColor.addEventListener("input", () => {
   penColor.style.backgroundColor = penColor.value; //make button same color as the pencil's current color
 });
 
-//rainbow mode (generate some color, enable/disable the mode)
+//MODES
+//rainbow
 let rainbow = document.getElementById("rainbow");
+let eraser = document.getElementById("eraser");
 
 function generateColor() {
   let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -82,19 +85,21 @@ rainbow.addEventListener("click", function handleClick() {
   if (rainbow.className == "off") {
     rainbow.className = "on";
     rainbow.innerHTML = "Rainbow mode: on"
+    eraser.className = "off";
+    eraser.innerHTML = "Eraser: off"
   } else {
     rainbow.className = "off";
     rainbow.innerHTML = "Rainbow mode: off"
   }
 });
 
-//eraser mode (enable/disable)
-let eraser = document.getElementById("eraser");
-
+//eraser
 eraser.addEventListener("click", function handleClick() {
   if (eraser.className == "off") {
     eraser.className = "on";
     eraser.innerHTML = "Eraser: on"
+    rainbow.className = "off";
+    rainbow.innerHTML = "Rainbow mode: off"
   } else {
     eraser.className = "off";
     eraser.innerHTML = "Eraser: off"

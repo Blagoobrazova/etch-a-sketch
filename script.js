@@ -8,7 +8,6 @@ function makeCanvas(size) {
   for (i = 0; i < size * size; i++) {
     const square = document.createElement("div");
     canvas.appendChild(square).className = "gridItem";
-    //square.addEventListener('click', draw());
   };
 };
 
@@ -28,7 +27,7 @@ function changeCanvas(value) {
     makeCanvas(value);
 }
 
-//deleting borders
+//hiding borders
 let hidebrd = document.getElementById("hideBorders");
 
 hidebrd.addEventListener("click", function handleClick() {
@@ -44,31 +43,29 @@ hidebrd.addEventListener("click", function handleClick() {
   }
 }); 
 
-//color picking 
+//clearing
 let backColor = document.getElementById("bColor");
+let clear = document.getElementById("cleartxt");
+
+clear.addEventListener("click", function handleClick() {
+  let gridPixels = canvas.querySelectorAll("div");
+  gridPixels.forEach(gridPixel => gridPixel.style.background = "#FFFFFF");
+  backColor.style.backgroundColor = "#FFFFFF";
+  backColor.value = "#FFFFFF";
+});
+
+//color picking 
 let penColor = document.getElementById("pColor");
 
 backColor.addEventListener("input", () => {
-  canvas.style.backgroundColor = backColor.value;
+  let gridPixels = canvas.querySelectorAll("div");
+  gridPixels.forEach(gridPixel => gridPixel.style.background = backColor.value);
   backColor.style.backgroundColor = backColor.value;
 });
 
 penColor.addEventListener("input", () => {
   penColor.style.backgroundColor = penColor.value;
 });
-
-//clearing
-let clear = document.getElementById("cleartxt");
-clear.addEventListener("click", function cleareAll() {
-  let allPixels = canvas.querySelectorAll("div");
-  allPixels.forEach(onePixel => allPixels.style.backgroundColor = "#ffffff");
-});
-
-/*function draw(e) {
-  e.target.backgroundColor = penColor.value;
-}
-
-clear.onclick = () => reloadGrid()*/
 
 //music
 let on_off = document.getElementById("music");

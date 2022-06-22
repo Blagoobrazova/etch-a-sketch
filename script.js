@@ -8,6 +8,7 @@ function makeCanvas(size) {
   for (i = 0; i < size * size; i++) {
     const square = document.createElement("div");
     canvas.appendChild(square).className = "gridItem";
+    canvas.addEventListener('click', draw);
   };
 };
 
@@ -58,18 +59,23 @@ clear.addEventListener("click", function handleClick() {
 //color picking 
 let penColor = document.getElementById("pColor");
 
-backColor.addEventListener("input", function changeBackground() {
+backColor.addEventListener("input", () => {
   let gridPixels = canvas.querySelectorAll("div");
   gridPixels.forEach(gridPixel => gridPixel.style.background = backColor.value);
   canvas.style.background = backColor.value;
-  backColor.style.backgroundColor = backColor.value;
+  backColor.style.backgroundColor = backColor.value; //make button same color as the background's current color
 });
 
 penColor.addEventListener("input", () => {
-  penColor.style.backgroundColor = penColor.value;
+  penColor.style.backgroundColor = penColor.value; //make button same color as the pencil's current color
 });
 
 //drawing
+function draw(e) {
+  e.target.style.backgroundColor = penColor.value;
+}
+
+
 
 //music
 let on_off = document.getElementById("music");

@@ -44,7 +44,7 @@ hidebrd.addEventListener("click", function handleClick() {
   }
 }); 
 
-//clearing all
+//clearing ALL on click
 let backColor = document.getElementById("bColor");
 let clear = document.getElementById("cleartxt");
 
@@ -70,7 +70,7 @@ penColor.addEventListener("input", () => {
   penColor.style.backgroundColor = penColor.value; //make button same color as the pencil's current color
 });
 
-//rainbow mode
+//rainbow mode (generate some color, enable/disable the mode)
 let rainbow = document.getElementById("rainbow");
 
 function generateColor() {
@@ -88,12 +88,28 @@ rainbow.addEventListener("click", function handleClick() {
   }
 });
 
+//eraser mode (enable/disable)
+let eraser = document.getElementById("eraser");
+
+eraser.addEventListener("click", function handleClick() {
+  if (eraser.className == "off") {
+    eraser.className = "on";
+    eraser.innerHTML = "Eraser: on"
+  } else {
+    eraser.className = "off";
+    eraser.innerHTML = "Eraser: off"
+  }
+});
+
+
 //drawing
 function draw(e) {
-  if (rainbow.className == "off"){
-  e.target.style.backgroundColor = penColor.value;
+  if (rainbow.className == "off" && eraser.className == "off"){
+    e.target.style.backgroundColor = penColor.value;
   } else if (rainbow.className == "on"){
     e.target.style.backgroundColor = generateColor();
+  } else if (eraser.className == "on"){
+    e.target.style.backgroundColor = backColor.value;
   }
 }
 

@@ -31,7 +31,7 @@ function changeCanvas(value) {
 let hidebrd = document.getElementById("hideBorders");
 
 hidebrd.addEventListener("click", function handleClick() {
-  let gridPixels = canvas.querySelectorAll("div");
+  let gridPixels = canvas.querySelectorAll("div"); // <-- declared again inside the func so that whenever canvas removes all its divs to re-size, this still works
   if(hidebrd.className == "on"){
   gridPixels.forEach(gridPixel => gridPixel.style.border = "0");
   hidebrd.className = "off";
@@ -43,7 +43,7 @@ hidebrd.addEventListener("click", function handleClick() {
   }
 }); 
 
-//clearing
+//clearing all
 let backColor = document.getElementById("bColor");
 let clear = document.getElementById("cleartxt");
 
@@ -52,20 +52,24 @@ clear.addEventListener("click", function handleClick() {
   gridPixels.forEach(gridPixel => gridPixel.style.background = "#FFFFFF");
   backColor.style.backgroundColor = "#FFFFFF";
   backColor.value = "#FFFFFF";
+  canvas.style.background = backColor.value;
 });
 
 //color picking 
 let penColor = document.getElementById("pColor");
 
-backColor.addEventListener("input", () => {
+backColor.addEventListener("input", function changeBackground() {
   let gridPixels = canvas.querySelectorAll("div");
   gridPixels.forEach(gridPixel => gridPixel.style.background = backColor.value);
+  canvas.style.background = backColor.value;
   backColor.style.backgroundColor = backColor.value;
 });
 
 penColor.addEventListener("input", () => {
   penColor.style.backgroundColor = penColor.value;
 });
+
+//drawing
 
 //music
 let on_off = document.getElementById("music");
